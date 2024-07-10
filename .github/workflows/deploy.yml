@@ -69,10 +69,8 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-        PUBLIC_URL=https://github.com/Lover1975/Software-Engineering-Lab-AZ-1.git
-        npm run deploy
+        git remote set-url origin https://${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}@github.com/${{ github.repository }}
+        npm run deploy -- -t ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
       working-directory: my-app
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ACTIONS_DEPLOY_ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
