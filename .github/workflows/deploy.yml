@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -24,9 +26,11 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
+      working-directory: my-app
       run: npm install
 
     - name: Run tests
+      working-directory: my-app
       run: npm test
 
   build-and-deploy:
@@ -37,6 +41,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -44,16 +50,19 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
+      working-directory: my-app
       run: npm install
 
     - name: Run tests
+      working-directory: my-app
       run: npm test
 
     - name: Build the React app
+      working-directory: my-app
       run: npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        publish_dir: my-app/build
