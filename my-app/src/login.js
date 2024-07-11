@@ -12,6 +12,9 @@ const Login = () => {
                 <label htmlFor="password" style={{ display: 'block', marginBottom: '10px' }}>Password:</label>
                 <input type="password" id="password" name="password" style={{ padding: '10px', width: '200px' }} />
             </div>
+            <button style={{ padding: '10px 20px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+                Log In
+            </button>
         </div>
     );
 };
