@@ -13,6 +13,7 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    margin-top: 150px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     text-align: center;
@@ -62,3 +63,15 @@ body {
     font-weight: bold;
   }
   
+  /* signup.css */
+.forms-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items at the start of the flex container */
+  gap: 20px; /* Adds space between the forms */
+}
+
+.signup-container, .login-container {
+  flex: 1; /* Each form will take up equal space */
+  max-width: 400px; /* Optional: limits the maximum width of the forms */
+}
