@@ -3,15 +3,32 @@ import React from 'react';
 const Profile = () => {
   return (
     <div>
-      <h1>Hello World!</h1>
-      <p>Welcome to the profile page.</p>
-      <button onClick={() => alert('Button clicked!')}>Click Me</button>
+      <h1>Profile Page</h1>
+      <h2>Jane Smith</h2>
+      <p>Welcome to Jane Smith's profile page. Jane is a passionate frontend developer with a love for creating beautiful and user-friendly web interfaces.</p>
+      <img src="https://via.placeholder.com/150" alt="Jane Smith" />
+      <h3>About Me</h3>
+      <p>Hello! I'm Jane Smith, a frontend developer specializing in React and JavaScript. I enjoy building intuitive and responsive web applications.</p>
+      <h3>Hobbies</h3>
       <ul>
-        <li>Profile Item 1</li>
-        <li>Profile Item 2</li>
-        <li>Profile Item 3</li>
-        <li>Profile Item 4</li>
-        <li>Profile Item 5</li>
+        <li>Hiking</li>
+        <li>Reading</li>
+        <li>Photography</li>
+        <li>Traveling</li>
+      </ul>
+      <h3>Skills</h3>
+      <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>UI/UX Design</li>
+      </ul>
+      <h3>Contact Information</h3>
+      <ul>
+        <li>Email: janesmith@example.com</li>
+        <li>GitHub: <a href="https://github.com/janesmith" target="_blank" rel="noopener noreferrer">github.com/janesmith</a></li>
+        <li>Twitter: <a href="https://twitter.com/janesmith" target="_blank" rel="noopener noreferrer">twitter.com/janesmith</a></li>
       </ul>
       <p>This is a simple profile page created using React.</p>
       <hr />
