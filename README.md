@@ -1,3 +1,14 @@
+# سوالات 
+1. پوشه‌ی `.git` یک دایرکتوری پنهان است که توسط سیستم کنترل نسخه گیت (Git) در ریشه‌ی یک مخزن (repository) ایجاد می‌شود. این پوشه شامل تمامی اطلاعات و داده‌های مرتبط با مخزن، از جمله تاریخچه‌ی تغییرات، تنظیمات مخزن، شاخه‌ها (branches)، برچسب‌ها (tags)، و اطلاعات مربوط به وضعیت فعلی مخزن است. به طور خاص، در این پوشه اطلاعاتی مانند اشیاء (objects)، مراجعات (references)، و فایل‌های پیکربندی ذخیره می‌شود.
+
+برای ایجاد پوشه‌ی `.git` و شروع یک مخزن جدید گیت، از دستور `git init` استفاده می‌شود. اجرای این دستور در دایرکتوری مورد نظر، پوشه‌ی `.git` را ایجاد کرده و آن دایرکتوری را به یک مخزن گیت تبدیل می‌کند.
+
+
+
+
+
+
+
 # Software Engineering Lab AZ-1
 
 Welcome to the Software Engineering Lab AZ-1 project. This project is designed to help you get started with the basics of software engineering practices, including setting up a development environment, working with Git and GitHub, and deploying a React application using GitHub Pages.
