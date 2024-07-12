@@ -1,4 +1,146 @@
+# Software Engineering Lab AZ-1
+
+
+# فهرست مطالب
+
+1. [مراحل راه‌اندازی](#مراحل-راه‌اندازی)
+2. [راه‌اندازی و استقرار پروژه با استفاده از GitHub Actions و GitHub Pages](#راه‌اندازی-و-استقرار-پروژه-با-استفاده-از-github-actions-و-github-pages)
+3. [اعمال محدودیت در شاخه‌ی `main` و محافظت از آن در GitHub](#اعمال-محدودیت-در-شاخه‌ی-main-و-محافظت-از-آن-در-github)
+4. [تداخل‌ها و رفع آن‌ها](#تداخل‌ها-و-رفع-آن‌ها)
+5. [سوالات](#سوالات)
+
+
+---
+
+# مراحل راه‌اندازی
+
+#### 1. کلون کردن مخزن
+ابتدا مخزن پروژه را از گیت‌هاب کلون کنید. برای این کار، ترمینال یا خط فرمان را باز کرده و دستور زیر را وارد کنید:
+```sh
+git clone https://github.com/Lover1975/Software-Engineering-Lab-AZ-1.git
+```
+
+#### 2. ورود به دایرکتوری پروژه
+بعد از کلون کردن مخزن، وارد دایرکتوری پروژه شوید:
+```sh
+cd Software-Engineering-Lab-AZ-1/my-app
+```
+
+#### 3. نصب وابستگی‌ها
+تمامی
+
+### گزارش راه‌اندازی پروژه
+
+این راهنما نحوه‌ی کلون کردن پروژه، نصب وابستگی‌ها و اجرای آن را توضیح می‌دهد. لطفاً مراحل زیر را دنبال کنید:
+
+### پیش‌نیازها
+1. **مطمئن شوید که Node.js روی سیستم شما نصب است. می‌توانید آن را از [سایت رسمی Node.js](https://nodejs.org/) دانلود و نصب کنید.**
+2. **مطمئن شوید که Git روی سیستم شما نصب است. می‌توانید آن را از [سایت رسمی Git](https://git-scm.com/) دانلود و نصب کنید.**
+
+### مراحل راه‌اندازی
+
+#### 1. کلون کردن مخزن
+ابتدا مخزن پروژه را از گیت‌هاب کلون کنید. برای این کار، ترمینال یا خط فرمان را باز کرده و دستور زیر را وارد کنید:
+```sh
+git clone https://github.com/Lover1975/Software-Engineering-Lab-AZ-1.git
+```
+
+#### 2. ورود به دایرکتوری پروژه
+بعد از کلون کردن مخزن، وارد دایرکتوری پروژه شوید:
+```sh
+cd Software-Engineering-Lab-AZ-1/my-app
+```
+
+#### 3. نصب وابستگی‌ها
+تمامی وابستگی‌های پروژه را با استفاده از npm نصب کنید:
+```sh
+npm install
+```
+
+#### 4. اجرای پروژه
+برای اجرای پروژه در حالت توسعه، از دستور زیر استفاده کنید:
+```sh
+npm start
+```
+این دستور یک سرور محلی راه‌اندازی کرده و پروژه را در مرورگر باز می‌کند. به طور پیش‌فرض، پروژه باید در آدرس `http://localhost:3000` قابل دسترسی باشد.
+<br> <br>
+---
+
+# راه‌اندازی و استقرار پروژه با استفاده از GitHub Actions و GitHub Pages
+
+#### توضیحات کلی
+
+در این پروژه، نرم‌افزار static frontend با استفاده از چارچوب ReactJS پیاده‌سازی شده است. برای استقرار این نرم‌افزار به صورت خودکار از GitHub Actions استفاده شده و صفحات آن بر روی GitHub Pages مستقر می‌شوند.
+
+#### شاخه‌های پروژه
+
+شاخه main شامل کدهای نهایی و آماده برای استقرار.  
+شاخه staging شامل کدهای در حال توسعه برای انتشار نسخه‌های بعدی.  
+شاخه feature/ برای توسعه ویژگی‌های جدید.  
+شاخه fix/ برای رفع باگ.  
+شاخه gh-pages برای استقرار صفحات GitHub Pages استفاده می‌شود.  
+
+#### استقرار خودکار با استفاده از GitHub Actions  
+یک فایل workflow در دایرکتوری `.github/workflows` ایجاد شده است که به صورت خودکار فرآیند build و deployment را مدیریت می‌کند. این workflow شامل مراحل زیر است:  
+
+بازیابی کدهای پروژه از مخزن گیت‌هاب.  
+پیکربندی محیط Node.js.  
+نصب وابستگی‌های پروژه.  
+بیلد کردن پروژه.  
+انتقال فایل‌های build شده به شاخه gh-pages برای استقرار در GitHub Pages.  
+
+#### استقرار روی GitHub Pages  
+در تنظیمات مخزن گیت‌هاب، منبع استقرار (Source) به شاخه `gh-pages` تنظیم شده است. هر بار که تغییری در شاخه‌های `main` یا `staging` انجام می‌شود، GitHub Actions به‌طور خودکار پروژه را build و بر روی GitHub Pages مستقر می‌کند.  
+
+<br> <br>
+---
+# اعمال محدودیت در شاخه‌ی `main` و محافظت از آن در GitHub
+
+برای محافظت از شاخه‌ی `main` و اطمینان از این که تنها از طریق pull request امکان ادغام شاخه‌ای دیگر با شاخه‌ی `main` وجود داشته باشد، مراحل زیر را انجام دادیم:
+
+#### مراحل اعمال محدودیت و محافظت از شاخه
+
+**رفتن به تنظیمات مخزن (Settings)**: ابتدا وارد مخزن پروژه در GitHub شدیم و سپس به تب "Settings" رفتیم.
+
+**رفتن به بخش Branches**: در تنظیمات مخزن، به بخش "Branches" رفتیم.
+
+**ایجاد قانون جدید برای شاخه‌ی `main`**: در این بخش، دکمه‌ی "Add rule" را کلیک کردیم تا قانون جدیدی برای شاخه‌ی `main` ایجاد کنیم.
+
+**پیکربندی قانون**: در فرم باز شده، تنظیمات مختلفی وجود داشت که تنظیمات مورد نیاز را اعمال کردیم.
+
+**ذخیره‌ی تغییرات**: پس از پیکربندی تنظیمات مورد نظر، دکمه‌ی "Create" یا "Save changes" را کلیک کردیم تا قانون جدید اعمال شود.
+
+در زیر عکسی را از قانون ساخته شده گذاشته‌ایم:
+
+<br> <br>
+![image](https://github.com/user-attachments/assets/81a45398-1c0a-4d24-8bb6-ab8f612c7025)
+
+
+<br> <br> 
+---
+
+# تداخل‌ها و رفع آن‌ها
+در زیر عکس دو conflictای که ایجاد کرده‌ایم و سپس برطرف کردن یکی از آن‌ها را نیز آورده‌ایم (مورد دیگر هم مشابه همین بوده است):
+<br> <br>
+![image](https://github.com/user-attachments/assets/514f7ee0-3448-418d-9227-c5623ce3ea6b)
+<br> <br>
+![image](https://github.com/user-attachments/assets/18bf752d-538f-4d54-9b80-50f44bc23b81)
+<br> <br>
+![image](https://github.com/user-attachments/assets/65af8d3c-8c1e-4efa-86d8-8704cdea043b)
+
+<br> <br> <br>
+
+### **می‌توانید جزئیات بیشتری از جمله پول ریکوئست‌ها، تعداد کامیت‌ها و سایر فعالیت‌ها را از طریق بخش کامیت‌های ثبت شده در مخزن گیت‌هاب مشاهده کنید.**
+
+
+
+
+
+<br> <br>
+---
+
 # سوالات 
+
 ## 1.
 پوشه‌ی `.git` یک دایرکتوری پنهان است که توسط سیستم کنترل نسخه گیت (Git) در ریشه‌ی یک مخزن (repository) ایجاد می‌شود. این پوشه شامل تمامی اطلاعات و داده‌های مرتبط با مخزن، از جمله تاریخچه‌ی تغییرات، تنظیمات مخزن، شاخه‌ها (branches)، برچسب‌ها (tags)، و اطلاعات مربوط به وضعیت فعلی مخزن است. به طور خاص، در این پوشه اطلاعاتی مانند اشیاء (objects)، مراجعات (references)، و فایل‌های پیکربندی ذخیره می‌شود.
 
@@ -123,93 +265,6 @@ Commit در Git نیز به معنای ثبت یک snapshot از وضعیت کن
 
 
 
-# Software Engineering Lab AZ-1
 
-Welcome to the Software Engineering Lab AZ-1 project. This project is designed to help you get started with the basics of software engineering practices, including setting up a development environment, working with Git and GitHub, and deploying a React application using GitHub Pages.
-
-## Table of Contents
-- [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Project](#running-the-project)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-- You have installed [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/).
-- You have a [GitHub](https://github.com/) account.
-- You have installed [Git](https://git-scm.com/).
-
-### Installation
-
-To set up the project on your local machine, follow these steps:
-
-1. **Clone the repository**:
-    ```sh
-    git clone https://github.com/Lover1975/Software-Engineering-Lab-AZ-1.git
-    ```
-   
-2. **Navigate to the project directory**:
-    ```sh
-    cd Software-Engineering-Lab-AZ-1/my-app
-    ```
-
-3. **Install the dependencies**:
-    ```sh
-    npm install
-    ```
-
-### Running the Project
-
-To run the project locally:
-
-1. **Start the development server**:
-    ```sh
-    npm start
-    ```
-
-2. Open your browser and navigate to `http://localhost:3000` to see the application running.
-
-### Deployment
-
-The project is automatically deployed to GitHub Pages whenever changes are pushed to the `main` branch. The deployment is handled by a GitHub Actions workflow.
-
-To manually trigger a deployment:
-
-1. Make sure all changes are committed and pushed to the `main` branch.
-
-2. The GitHub Actions workflow will automatically build and deploy the project to GitHub Pages. You can check the status of the workflow in the "Actions" tab of your repository.
-
-### Contributing
-
-To contribute to this project, follow these steps:
-
-1. **Fork the repository**.
-
-2. **Create a new branch**:
-    ```sh
-    git checkout -b feature/your-feature-name
-    ```
-
-3. **Make your changes and commit them**:
-    ```sh
-    git commit -m "Add feature"
-    ```
-
-4. **Push to the branch**:
-    ```sh
-    git push origin feature/your-feature-name
-    ```
-
-5. **Create a pull request**.
-
-### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
